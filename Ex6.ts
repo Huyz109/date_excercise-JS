@@ -1,4 +1,4 @@
-const calculate_age = birth => {
+const calculate_age = (birth: Date) => {
     const today = new Date();
     let yearDiff = today.getFullYear() - birth.getFullYear();
     const monthDiff = today.getMonth() - birth.getMonth();

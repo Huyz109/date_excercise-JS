@@ -7,11 +7,17 @@ const convertSecondToString = (seconds) => {
 }
 
 const addTime = (timeString, add = 0) => {
+    let result;
     const timeArray = timeString.split(':');
     const totalSeconds = Number(timeArray[0]) * 3600 + Number(timeArray[1]) * 60 + Number(timeArray[2]);
-    const result = convertSecondToString(totalSeconds + add);
+    if (add > 1000) {
+        result = false
+    }
+    else {
+        result = convertSecondToString(totalSeconds + add);
+    }
     console.log(result);
     return result;
 }
 
-addTime('9:20:56')
+addTime('9:20:56', 10)
